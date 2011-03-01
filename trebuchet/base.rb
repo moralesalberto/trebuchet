@@ -4,7 +4,7 @@ class Base
   def initialize(trebuchet)
     @trebuchet = trebuchet
     @game_window = @trebuchet.game_window
-    @color = Color.new.yellow
+    @color = Gosu::Color::WHITE 
     @layer = 1
   end
   

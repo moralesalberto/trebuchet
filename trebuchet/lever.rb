@@ -8,9 +8,8 @@ class Lever
     @center_x = 355
     @center_y = 350
     @radius = 200.0
-    @color = Color.new
-    @lever_color = @color.red
-    @axle_color = @color.green
+    @lever_color = Gosu::Color::RED 
+    @axle_color = Gosu::Color::GREEN 
     @layer = 3
   end
   
@@ -21,19 +20,19 @@ class Lever
   
   def draw_axle
     @game_window.draw_quad(
-      @center_x-5, @game_window.height - @center_y-5,@color.red,
-      @center_x+5,@game_window.height - @center_y-5, @color.red,
-      @center_x-5,@game_window.height - @center_y+5,@color.red,
-      @center_x+5,@game_window.height - @center_y+5,@color.red,
+      @center_x-5, @game_window.height - @center_y-5, @axle_color,
+      @center_x+5,@game_window.height - @center_y-5, @axle_color,
+      @center_x-5,@game_window.height - @center_y+5,@axle_color,
+      @center_x+5,@game_window.height - @center_y+5,@axle_color,
       @layer+10)
   end
   
   def draw_lever
     @game_window.draw_quad(
-      x1,y1,@color.green,
-      x2,y2, @color.green,
-      x3,y3,@color.green,
-      x4,y4,@color.green,
+      x1,y1,@lever_color,
+      x2,y2, @lever_color,
+      x3,y3, @lever_color,
+      x4,y4,@lever_color,
       @layer)
   end
   
