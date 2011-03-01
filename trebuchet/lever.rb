@@ -50,11 +50,11 @@ class Lever
     (Math.asin((@thickness*1.0)/(2.0*@radius)))*180.0/Math::PI
   end
   
-  def x3
+  def x2
     (cos(@angle-thickness_angle) * @radius) + @center_x
   end
   
-  def y3
+  def y2
     @game_window.height - (sin(@angle-thickness_angle) * @radius) - @center_y
   end
   
@@ -74,11 +74,11 @@ class Lever
     @game_window.height - (sin(@angle+thickness_angle) * @radius) - @center_y
   end
   
-  def x2
+  def x3
     (cos(@angle+180+thickness_angle) * @radius) + @center_x
   end
   
-  def y2
+  def y3
     @game_window.height - (sin(@angle+180+thickness_angle) * @radius) - @center_y
   end
   
@@ -93,3 +93,12 @@ class Lever
 
   
 end
+
+#opening float for 1.8.7 compatibility
+class Float
+    alias_method :round_orig, :round
+    def round(n=0)
+        (self * (10.0 ** n)).round_orig * (10.0 ** (-n))
+    end
+end
+

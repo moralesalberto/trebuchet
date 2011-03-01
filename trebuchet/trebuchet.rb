@@ -1,5 +1,4 @@
-require_relative('lever')
-require_relative('base')
+
 
 class Trebuchet
   attr_reader :game_window
